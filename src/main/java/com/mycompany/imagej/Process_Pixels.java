@@ -1,12 +1,12 @@
 /*
- * To the extent possible under law, the ImageJ developers have waived
- * all copyright and related or neighboring rights to this tutorial code.
+ *  Test ImageJ
  *
- * See the CC0 1.0 Universal license for details:
- *     http://creativecommons.org/publicdomain/zero/1.0/
+ *
  */
 
 package com.mycompany.imagej;
+import javax.swing.JOptionPane;
+
 
 import ij.IJ;
 import ij.ImageJ;
@@ -179,6 +179,10 @@ public class Process_Pixels implements PlugInFilter {
 		// start ImageJ
 		new ImageJ();
 
+		String nom = JOptionPane.showInputDialog("Quel est ton nom ?");
+		String message = String.format("Salut %s. Java est cool, n'est ce pas ?", nom);
+        JOptionPane.showInternalMessageDialog(null,message);
+        
 		// open the Clown sample
 		ImagePlus image = IJ.openImage("http://imagej.net/images/clown.jpg");
 		image.show();
